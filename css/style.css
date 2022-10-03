@@ -1,0 +1,406 @@
+/* --- Reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Upload Fonts */
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Variables ---  */
+:root {
+  /* --- Colors --- */
+  --primary-blue: #13152A;
+  --primary-white: #FFFFFF;
+  --primary-lilac: #AA33B5;
+  --primary-red: #920000;
+  --secondary-red: #db2b2b;
+  --primary-yellow: #EAFA54;
+
+  /* --- Fonts --- */
+  --primary-font: 'Montserrat Bold', Tahoma, Verdana, sans-serif;
+}
+
+/* --- General Styles --- */
+body {
+  background-color: var(--primary-blue);
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+li,
+label {
+  color: var(--primary-white);
+  font-family: var(--primary-font);
+}
+
+input {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.contents__align {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.contents__spacebetween {
+  justify-content: space-between;
+}
+
+.contents__relative {
+  position: relative;
+}
+
+.contents__absolute {
+  left: -58px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+
+.image__size {
+  width: 37%;
+}
+
+.action__button {
+  background-color: var(--primary-lilac);
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5rem; 
+  transition: opacity .8s, background-color .3s; 
+}
+
+.action__button:hover {
+  background-color: #de7ae7;
+}
+
+.padding__buttons {
+  padding: 0.5rem 2rem;
+}
+
+/* --- Wallet --- */
+  /* --- Add Wallet --- */
+.wallet__balance .wallet__add {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.wallet__add.contents__align {
+  flex-wrap: wrap;
+}
+
+.wallet__balance .wallet__add .content__align {
+  justify-content: flex-start;
+}
+
+.wallet__balance .wallet__add svg {
+  fill: var(--primary-yellow);
+  max-width: 25%;
+}
+
+.wallet__balance .wallet__add  h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+}
+  /* --- Wallet Contents --- */
+.wallet__contents {
+  text-align: center;
+  transition: opacity .8s;
+}
+
+.wallet__contents .wallet__info {
+  padding-bottom: 1.5rem;
+}
+
+.no__record {
+  display: none;
+}
+
+.empty__list {
+  display: block;
+}
+
+.no__record p {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.no__record p {
+  color: var(--primary-red);
+}
+
+.wallet__contents .balance__record .tokens__balances li + li {
+  margin-top: 1.5rem;
+}
+
+.wallet__contents .balance__record .tokens__balances .button__edittoken {
+  background-color: transparent;
+  left: -48px;
+  
+}
+
+.wallet__contents .balance__record .tokens__balances img {
+  max-width: 1.9rem;
+}
+
+.wallet__contents .balance__record .tokens__balances .token,
+.wallet__contents .balance__record .tokens__balances .balance {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+/* --- Wallet Create --- */
+.add__wallet .create__tokenandbalance {
+  display: flex;
+  flex-direction: column;
+}
+
+.add__wallet > div:first-child {
+  padding-bottom: 2rem;
+}
+
+.add__wallet .button__back {
+  background-color: #646464;
+  border-radius: 4px;
+  transition: .3s;
+}
+
+.add__wallet .button__back:hover {
+  background-color: #908d8d;
+}
+
+.add__wallet .create__tokenandbalance label {
+  padding-bottom: 8px;
+}
+
+.add__wallet .create__tokenandbalance input {
+  border: 2px solid var(--primary-white);
+  border-radius: 4px;
+  padding: .625rem .25rem;
+  margin-bottom: 1.5rem;
+}
+
+.wallet__create .action__buttons {
+  justify-content: flex-end;
+}
+
+.add__wallet .action__buttons .button__remove {
+  background-color: var(--primary-red);
+  transition: .3s;
+}
+
+.add__wallet .action__buttons .button__remove:hover {
+  background-color: #c93737;
+}
+
+.wallet__create .button__remove {
+  display: none;
+}
+
+.add__wallet .action__buttons .button__save {
+  background-color: var(--primary-lilac);
+  transition: .3s;
+}
+
+.add__wallet .action__buttons .button__save:hover {
+  background-color: #de7ae7;
+}
+
+.add__wallet .action__buttons .button__remove,
+.add__wallet .action__buttons .button__save {
+  border-radius: 4px;
+}
+
+/* --- Wallet Remoove --- */
+.wallet__edit .action__buttons {
+  justify-content: space-between;
+}
+
+.wallet__edit .button__remove {
+  display: block;
+}
+
+.disable {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  width: 0;
+  padding: 0;
+}
+
+.active {
+  width: initial;
+  height: initial;
+  opacity: 1;
+  overflow: initial;
+  transition: opacity .8s;
+  
+}
+
+.error {
+  color: var(--secondary-red);
+}
+
+.add__wallet .create__tokenandbalance input.input__error {
+  border-color: var(--secondary-red);
+}
+/* Remove token */
+.modal__removeItem {
+  display: none; 
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.modal__removeItem.active__modal {
+  display: flex;
+}
+
+.modal__removeItem.active__modal .container__modal {
+  animation: animActiveModalRemove .8s;
+  align-items: center;
+  box-shadow:  0 10px 60px var(--primary-blue);
+  border-radius: 4px;
+  background-color: var(--primary-white);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+}
+
+.modal__removeItem.active__disable .container__modal {
+  animation: animDisableModalRemove .8s forwards;
+}
+
+@keyframes animActiveModalRemove {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animDisableModalRemove {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  } to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.modal__removeItem p {
+  color: var(--primary-blue);
+  text-align: center;
+}
+
+.modal__removeItem .buttons__modal {
+  padding-top: 16px;
+}
+
+.modal__removeItem button {
+  border-radius: 4px;
+}
+
+.modal__removeItem button:first-child {
+  margin-right: 8px;
+}
+
+.modal__removeItem button.yes__remove {
+  background-color: var(--secondary-red);
+  border: 2px solid var(--secondary-red);
+  color: var(--primary-white);
+}
+
+.modal__removeItem button.no__remove {
+  border: 2px solid var(--secondary-red);
+  color: var(--secondary-red);
+}
+
+.modal__removeItem button.yes__remove,
+.modal__removeItem button.no__remove {
+  transition: background-color .3s;
+}
+
+.modal__removeItem button.no__remove:hover,
+.modal__removeItem button.yes__remove:hover {
+  background-color: var(--primary-red);
+  border-color: var(--primary-red);
+  color: var(--primary-white);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  * {
+    font-size: 10px;
+  }
+
+  .contents__spacebetween > div ,
+  .wallet__balance .wallet__add h1 {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .wallet__balance .wallet__add svg {
+    display: block;
+    margin-right: 8px;
+    max-width: 24px;
+  }
+
+  .wallet__contents .balance__record .tokens__balances .button__edittoken {
+    left: initial;
+    margin-right: 8px;
+  }
+
+  .contents__absolute {
+    left: initial;
+    position: initial;
+    top: initial;
+    transform: initial;
+  }
+  
+  .modal__removeItem.active__modal {
+    max-width: 300px;
+    padding: 0 8px;
+    width: 100%;
+  }
+}
